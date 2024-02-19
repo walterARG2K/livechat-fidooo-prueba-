@@ -25,7 +25,7 @@ export function Rooms() {
   }
 
   function handleGlobalChat() {
-    router.push("/chat/0");
+    router.push("/chat/999999");
   }
 
   function handleLogOut() {
