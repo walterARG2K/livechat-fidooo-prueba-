@@ -13,6 +13,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <title>LiveChat</title>
+      <meta
+        name="description"
+        content="chatea en tiempo real con personas de todo el mundo!"
+      />
       <Provider store={store}>
         <body className={inter.className}>{children}</body>
       </Provider>
