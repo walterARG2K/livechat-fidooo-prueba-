@@ -5,7 +5,7 @@ export function getCookie(cookie: string) {
     );
 
     if (cookieFounded) {
-      return decodeURIComponent(cookieFounded[2]);
+      return decodeURIComponent(cookieFounded.pop()!);
     }
   }
 }
