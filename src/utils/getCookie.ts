@@ -1,8 +1,11 @@
 export function getCookie(cookie: string) {
-  var cookieFounded = document.cookie.match(
-    "(^|;)\\s*" + cookie + "\\s*=\\s*([^;]+)"
-  );
-  if (cookieFounded) {
-    return decodeURIComponent(cookieFounded.pop()!);
+  if (typeof document !== "undefined") {
+    var cookieFounded = document.cookie.match(
+      "(^|;)\\s*" + cookie + "\\s*=\\s*([^;]+)"
+    );
+
+    if (cookieFounded) {
+      return decodeURIComponent(cookieFounded[2]);
+    }
   }
 }
