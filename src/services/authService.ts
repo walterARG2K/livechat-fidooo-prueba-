@@ -7,7 +7,6 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../config/firebase";
-import { AddUser } from "./usersService";
 
 export async function signUp(name: string, email: string, password: string) {
   try {
@@ -20,13 +19,6 @@ export async function signUp(name: string, email: string, password: string) {
       displayName: name,
       photoURL: `https://api.multiavatar.com/${response.user.uid}.png?apikey=${process.env.NEXT_PUBLIC_MULTIAVATAR_API_KEY}`,
     });
-    if (response.user) {
-      await AddUser(
-        response.user.displayName!,
-        response.user.email!,
-        response.user.uid
-      );
-    }
     return response as UserCredential & {
       user: User & { accessToken: string };
     };
