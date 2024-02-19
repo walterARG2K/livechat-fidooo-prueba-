@@ -73,7 +73,7 @@ interface SkeletonProps {
 export function MessageElSkeleton({ received, width, height }: SkeletonProps) {
   return (
     <div
-      className={`w-full animate-pulse bg-gray-300 text-white ${
+      className={`w-5/6 animate-pulse bg-gray-300 text-white ${
         received ? "rounded-bl-none ml-9" : " rounded-br-none self-end"
       } px-3 rounded-lg py-2 relative text-sm break-words whitespace-pre-wrap flex flex-col`}
       style={{ wordBreak: "break-word", maxWidth: width, height }}

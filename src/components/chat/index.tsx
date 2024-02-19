@@ -7,7 +7,6 @@ import { StoreState } from "@/types/redux";
 import { sendMessage } from "@/services/chatService";
 import { FormatDate } from "@/utils/formatDate";
 import { Skeleton } from "../skeleton";
-import { v4 } from "uuid";
 
 interface SendMessageProps {
   scrollEnd: boolean;
@@ -94,7 +93,7 @@ function ChatMessages({
       onScroll={handleOnScroll}
       className="w-full h-screen max-w-5xl bg-white rounded-xl  relative flex flex-col-reverse pt-3 px-6 gap-6 overflow-scroll scroll-smooth scrollbar-hide pb-3 rounded-br-none rounded-bl-none"
     >
-      {session ? (
+      {!session ? (
         messages?.map((message, i) => {
           const itsTheSameDay =
             FormatDate(message.timestamp).day ==
@@ -109,7 +108,7 @@ function ChatMessages({
           );
 
           return (
-            <Fragment key={v4()}>
+            <Fragment key={i}>
               <MessageEl
                 time={message.timestamp}
                 photo={itsTheLastMessage ? message?.photo! : ""}
