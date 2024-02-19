@@ -23,7 +23,7 @@ export default function LoginPage() {
       <div className="flex flex-col items-center">
         <picture className="max-w-64 max-h-24 relative w-screen h-screen inline-block">
           <Image
-            className="object-none"
+            className="object-contain"
             loading="lazy"
             fill
             src={"/logo.webp"}
